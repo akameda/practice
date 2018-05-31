@@ -9,7 +9,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import javax.imageio.metadata;
+//import javax.imageio.metadata;
 
 public class StreamTest6 {
 
@@ -22,12 +22,12 @@ public class StreamTest6 {
       DataInputStream dataInStream = 
         new DataInputStream(
           new BufferedInputStream(
-            new FileInputStream("/Users/a10241ra/Desktop/tmp/IMG_0034.JPG")));
+            new FileInputStream("C:\\Users\\IBM_ADMIN\\Pictures\\all\\images.jpg")));
       // To copy.jpg
       DataOutputStream dataOutStream = 
         new DataOutputStream(
           new BufferedOutputStream(
-            new FileOutputStream("/Users/a10241ra/Desktop/tmp/IMG_0034_COPY.JPG")));
+            new FileOutputStream("C:\\Users\\IBM_ADMIN\\Pictures\\all\\images_copy.jpg")));
 
       while(-1 != (readByte = dataInStream.read(b))){
         dataOutStream.write(b, 0, readByte);
@@ -45,13 +45,5 @@ public class StreamTest6 {
     }
   }
 
-  public static void ExifRead() {
-  Metadata metadata = ImageMetadataReader.readMetadata(new File("xxxx.jpg"));
-  	for (Directory directory : metadata.getDirectories()) {
-  		for (Tag tag : directory.getTags()) {
-  			System.out.println(tag);
-  		}
-  	}
-  }
   
 }
